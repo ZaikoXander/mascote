@@ -1,10 +1,18 @@
 import { Button } from "@/components/ui/button"
 import { MapPin, Phone, Facebook, Instagram, Menu } from "lucide-react"
-import { Link, Route, Routes } from "react-router-dom"
+import { Link, Route, Routes, useLocation, useNavigate } from "react-router-dom"
 
 import Home from "./pages/Home"
+import Reservation from "./pages/Reservation"
+
+import { cn } from "./lib/utils"
 
 function App() {
+  const location = useLocation()
+  const isOnReservationsPage = location.pathname === '/reservas'
+
+  const navigate = useNavigate()
+
   return (
     <div className="flex flex-col min-h-screen">
       <header className="bg-white shadow-md">
@@ -17,16 +25,17 @@ function App() {
             <Link to="/sobre" className="text-gray-600 hover:text-gray-800">Sobre</Link>
             <Link to="/contatos" className="text-gray-600 hover:text-gray-800">Contato</Link>
           </nav>
-          <Button variant="outline" size="icon" className="md:hidden">
+          <Button variant="outline" size="icon" className="md:hidden" onClick={() => navigate('/cardapio')}>
             <Menu className="h-6 w-6" />
             <span className="sr-only">Abra o cardápio</span>
           </Button>
         </div>
       </header>
 
-      <main className="flex-grow">
+      <main className={cn('flex-grow', { 'bg-gray-100 py-20': isOnReservationsPage })}>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/reservas" element={<Reservation />} />
         </Routes>
       </main>
 

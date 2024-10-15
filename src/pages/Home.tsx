@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button"
+import { useNavigate } from "react-router-dom"
 
 interface FeaturedDish {
   name: string
@@ -7,6 +8,8 @@ interface FeaturedDish {
 }
 
 export default function Home() {
+  const navigate = useNavigate()
+
   const featuredDishes: FeaturedDish[] = [
     { name: "Abadejo a moda"/* , description: "Fresh Atlantic salmon with lemon butter sauce" */, image: "/placeholder.svg?height=200&width=400" },
     { name: "Abadejo abellemuniere"/* , description: "Creamy Arborio rice with black truffle shavings" */, image: "/placeholder.svg?height=200&width=400" },
@@ -24,7 +27,7 @@ export default function Home() {
             <div className="md:w-1/2 mb-10 md:mb-0">
               <h2 className="text-4xl font-bold text-gray-800 mb-4">Bem vindo ao Mascote</h2>
               <p className="text-xl text-gray-600 mb-6">Experimente a excelência culinária no coração da cidade.</p>
-              <Button className="bg-orange-500 hover:bg-orange-600 text-white">Faça uma Reserva</Button>
+              <Button onClick={() => navigate('/reservas')} className="bg-orange-500 hover:bg-orange-600 text-white">Faça uma Reserva</Button>
             </div>
             <div className="md:w-1/2">
               <img src="/placeholder.svg?height=400&width=600" alt="Restaurant interior" className="rounded-lg shadow-lg" />
