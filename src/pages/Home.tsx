@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom"
 
 interface FeaturedDish {
   name: string
-  // description: string
   image: string
 }
 
@@ -11,12 +10,12 @@ export default function Home() {
   const navigate = useNavigate()
 
   const featuredDishes: FeaturedDish[] = [
-    { name: "Abadejo a moda"/* , description: "Fresh Atlantic salmon with lemon butter sauce" */, image: "/placeholder.svg?height=200&width=400" },
-    { name: "Abadejo abellemuniere"/* , description: "Creamy Arborio rice with black truffle shavings" */, image: "/placeholder.svg?height=200&width=400" },
-    { name: "File mingnon aparmegiana"/* , description: "Decadent chocolate cake with a molten center" */, image: "/placeholder.svg?height=200&width=400" },
-    { name: "Pizza Portuguesa"/* , description: "Decadent chocolate cake with a molten center" */, image: "/placeholder.svg?height=200&width=400" },
-    { name: "Pizza Mussarela"/* , description: "Decadent chocolate cake with a molten center" */, image: "/placeholder.svg?height=200&width=400" },
-    { name: "Pizza Calabresa"/* , description: "Decadent chocolate cake with a molten center" */, image: "/placeholder.svg?height=200&width=400" }
+    { name: "Abadejo a moda", image: "/placeholder.svg?height=200&width=400" },
+    { name: "Abadejo abellemuniere", image: "/placeholder.svg?height=200&width=400" },
+    { name: "File mingnon aparmegiana", image: "/placeholder.svg?height=200&width=400" },
+    { name: "Pizza Portuguesa", image: "/placeholder.svg?height=200&width=400" },
+    { name: "Pizza Mussarela", image: "/placeholder.svg?height=200&width=400" },
+    { name: "Pizza Calabresa", image: "/placeholder.svg?height=200&width=400" }
   ]
 
   return (
@@ -30,7 +29,7 @@ export default function Home() {
               <Button onClick={() => navigate('/reservas')} className="bg-orange-500 hover:bg-orange-600 text-white">Faça uma Reserva</Button>
             </div>
             <div className="md:w-1/2">
-              <img src="/placeholder.svg?height=400&width=600" alt="Restaurant interior" className="rounded-lg shadow-lg" />
+              <img src="/placeholder.svg?height=400&width=600" alt="Interior do restaurante" className="rounded-lg shadow-lg" />
             </div>
           </div>
         </div>
@@ -44,7 +43,6 @@ export default function Home() {
                 <img src={dish.image} alt={dish.name} className="w-full h-48 object-cover" />
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-800 mb-2">{dish.name}</h3>
-                  {/* <p className="text-gray-600">{dish.description}</p> */}
                 </div>
               </div>
             ))}
