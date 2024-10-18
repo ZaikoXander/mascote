@@ -9,6 +9,7 @@ import Home from "./pages/Home"
 import Reservation from "./pages/Reservation"
 
 import { cn } from "./lib/utils"
+import About from "./pages/About"
 
 function App() {
   const location = useLocation()
@@ -71,6 +72,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/reservas" element={<Reservation />} />
+          <Route path="/sobre" element={<About />} />
         </Routes>
       </main>
 
