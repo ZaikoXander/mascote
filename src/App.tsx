@@ -82,7 +82,7 @@ function App() {
               <ul className="space-y-2">
                 <li className="flex items-center">
                   <MapPin className="h-5 w-5 mr-2" />
-                  <span>Av. Pres. Kennedy, 18738 - Vila Caiçara, Praia Grande - SP, 11709-000</span>
+                  <span>Av. Pres. Kennedy, 18.738 - Balneario Flórida, Praia Grande - SP, 11708-206</span>
                 </li>
                 <li className="flex items-center">
                   <Phone className="h-5 w-5 mr-2" />
