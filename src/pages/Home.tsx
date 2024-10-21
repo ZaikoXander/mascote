@@ -1,6 +1,12 @@
 import { Button } from "@/components/ui/button"
 import { useNavigate } from "react-router-dom"
 
+import abadejoAModa from '../assets/abadejo-a-moda.jpeg'
+import fileMingnonAparmegiana from '../assets/file-mingnon-aparmegiana.jpeg'
+import portuguesaPizza from '../assets/portuguesa-pizza.jpeg'
+import mussarelaPizza from '../assets/mussarela-pizza.jpeg'
+import calabresaPizza from '../assets/calabresa-pizza.jpeg'
+
 interface FeaturedDish {
   name: string
   image: string
@@ -10,12 +16,12 @@ export default function Home() {
   const navigate = useNavigate()
 
   const featuredDishes: FeaturedDish[] = [
-    { name: "Abadejo a moda", image: "/placeholder.svg?height=200&width=400" },
+    { name: "Abadejo a moda", image: abadejoAModa },
     { name: "Abadejo abellemuniere", image: "/placeholder.svg?height=200&width=400" },
-    { name: "File mingnon aparmegiana", image: "/placeholder.svg?height=200&width=400" },
-    { name: "Pizza Portuguesa", image: "/placeholder.svg?height=200&width=400" },
-    { name: "Pizza Mussarela", image: "/placeholder.svg?height=200&width=400" },
-    { name: "Pizza Calabresa", image: "/placeholder.svg?height=200&width=400" }
+    { name: "File mingnon aparmegiana", image: fileMingnonAparmegiana },
+    { name: "Pizza Portuguesa", image: portuguesaPizza },
+    { name: "Pizza Mussarela", image: mussarelaPizza },
+    { name: "Pizza Calabresa", image: calabresaPizza }
   ]
 
   return (
