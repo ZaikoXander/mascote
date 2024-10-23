@@ -1,5 +1,10 @@
-import { Button } from "@/components/ui/button"
+import type IFeaturedDish from "@/types/FeaturedDish"
+
 import { useNavigate } from "react-router-dom"
+
+import { Button } from "@/components/ui/button"
+
+import FeaturedDish from "@/components/FeaturedDish"
 
 import abadejoAModa from '../assets/abadejo-a-moda.jpeg'
 import fileMingnonAparmegiana from '../assets/file-mingnon-aparmegiana.jpeg'
@@ -7,15 +12,10 @@ import portuguesaPizza from '../assets/portuguesa-pizza.jpeg'
 import mussarelaPizza from '../assets/mussarela-pizza.jpeg'
 import calabresaPizza from '../assets/calabresa-pizza.jpeg'
 
-interface FeaturedDish {
-  name: string
-  image: string
-}
-
 export default function Home() {
   const navigate = useNavigate()
 
-  const featuredDishes: FeaturedDish[] = [
+  const featuredDishes: IFeaturedDish[] = [
     { name: "Abadejo a moda", image: abadejoAModa },
     { name: "Abadejo abellemuniere", image: "/placeholder.svg?height=200&width=400" },
     { name: "File mingnon aparmegiana", image: fileMingnonAparmegiana },
@@ -44,13 +44,8 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">Mais pedidos</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {featuredDishes.map((dish, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src={dish.image} alt={dish.name} className="w-full h-48 object-cover" />
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-800 mb-2">{dish.name}</h3>
-                </div>
-              </div>
+            {featuredDishes.map(({ name, image }, index) => (
+              <FeaturedDish key={index} name={name} image={image} />
             ))}
           </div>
         </div>
