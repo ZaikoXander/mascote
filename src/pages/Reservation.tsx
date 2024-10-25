@@ -14,13 +14,13 @@ export default function Reservation() {
   const [feedbackMessage, setFeedbackMessage] = useState<string | null>(null);
   const [table, setTable] = useState<number | null>(null);
 
-  const [name, setName] = useState<string>('John Doe');
-  const [email, setEmail] = useState<string>('john_doe@example.com');
-  const [phoneNumber, setPhoneNumber] = useState<string>('11999999998');
-  const [numberOfGuests, setNumberOfGuests] = useState<string>('8');
-  const [date, setDate] = useState<string>('2024-12-03');
-  const [time, setTime] = useState<string>('17:00');
-  const [observations, setObservations] = useState<string>('Ola mundo');
+  const [name, setName] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
+  const [phoneNumber, setPhoneNumber] = useState<string>('');
+  const [numberOfGuests, setNumberOfGuests] = useState<string>('');
+  const [date, setDate] = useState<string>('');
+  const [time, setTime] = useState<string>('');
+  const [observations, setObservations] = useState<string>('');
 
   useEffect(() => {
     const dateInput = dateInputRef.current;
