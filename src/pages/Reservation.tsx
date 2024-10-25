@@ -17,9 +17,9 @@ export default function Reservation() {
   const [name, setName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [phoneNumber, setPhoneNumber] = useState<string>('');
-  const [numberOfGuests, setNumberOfGuests] = useState<string>('');
+  const [numberOfGuests, setNumberOfGuests] = useState<string | undefined>(undefined);
   const [date, setDate] = useState<string>('');
-  const [time, setTime] = useState<string>('');
+  const [time, setTime] = useState<string | undefined>(undefined);
   const [observations, setObservations] = useState<string>('');
 
   useEffect(() => {
@@ -77,7 +77,7 @@ export default function Reservation() {
       console.error(error);
 
       const axiosError = error as AxiosError;
-      const tableNotAvailableError = (axiosError?.response?.data as { table: Array<string> }).table.includes('No available tables for the selected date and time')
+      const tableNotAvailableError = (axiosError?.response?.data as { table: Array<string> })?.table.includes('No available tables for the selected date and time')
 
       if (tableNotAvailableError) {
         setFeedbackMessage('Não há mesas disponíveis para a data e horário selecionados.')
@@ -106,7 +106,7 @@ export default function Reservation() {
           </div>
           <div className="space-y-2">
             <Label htmlFor="guests">Número de Convidados</Label>
-            <Select value={numberOfGuests} onValueChange={(value) => setNumberOfGuests(value)}>
+            <Select value={numberOfGuests} onValueChange={(value) => setNumberOfGuests(value)} required>
               <SelectTrigger id="guests">
                 <SelectValue placeholder="Selecione o número de convidados" />
               </SelectTrigger>
@@ -132,26 +132,26 @@ export default function Reservation() {
           </div>
           <div className="space-y-2">
             <Label htmlFor="time">Horário</Label>
-            <Select value={time} onValueChange={(value) => setTime(value)}>
+            <Select value={time} onValueChange={(value) => setTime(value)} required>
               <SelectTrigger id="time">
-              <SelectValue placeholder="Selecione o horário da reserva" />
+                <SelectValue placeholder="Selecione o horário da reserva" />
               </SelectTrigger>
               <SelectContent>
-              {Array.from({ length: 13 }, (_, index) => {
-                const hour = index + 11;
-                return (
-                <>
-                  {hour !== 11 && (
-                  <SelectItem key={`${hour}:00`} value={`${hour}:00`}>
-                    {`${hour}:00`}
-                  </SelectItem>)}
-                  {hour < 23 && (
-                  <SelectItem key={`${hour}:30`} value={`${hour}:30`}>
-                    {`${hour}:30`}
-                  </SelectItem>)}
-                </>
-                );
-              })}
+                {Array.from({ length: 13 }, (_, index) => {
+                  const hour = index + 11;
+                  return (
+                  <>
+                    {hour !== 11 && (
+                    <SelectItem key={`${hour}:00`} value={`${hour}:00`}>
+                      {`${hour}:00`}
+                    </SelectItem>)}
+                    {hour < 23 && (
+                    <SelectItem key={`${hour}:30`} value={`${hour}:30`}>
+                      {`${hour}:30`}
+                    </SelectItem>)}
+                  </>
+                  );
+                })}
               </SelectContent>
             </Select>
           </div>
