@@ -5,11 +5,11 @@ import { MapPin, Phone, Facebook, Instagram, Menu, X } from "lucide-react"
 
 import { Link, Route, Routes, useLocation } from "react-router-dom"
 
-import Home from "./pages/Home"
-import Reservation from "./pages/Reservation"
+import Home from "@/pages/Home"
+import Reservation from "@/pages/Reservation"
+import About from "@/pages/About"
 
-import { cn } from "./lib/utils"
-import About from "./pages/About"
+import { cn } from "@/lib/utils"
 
 function App() {
   const location = useLocation()
@@ -21,24 +21,38 @@ function App() {
     <div className="flex flex-col min-h-screen">
       <header className="bg-white shadow-md">
         <div className="container mx-auto px-4 py-6 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-gray-800">Mascote</h1>
+          <Link to="/">
+            <h1 className="text-2xl font-bold text-gray-800 hover:text-gray-600">
+              Mascote
+            </h1>
+          </Link>
           <nav className="hidden md:flex space-x-4">
-            <Link to="/" className="text-gray-600 hover:text-gray-800">Início</Link>
-            <Link to="/cardapio" className="text-gray-600 hover:text-gray-800">Cardápio</Link>
-            <Link to="/reservas" className="text-gray-600 hover:text-gray-800">Reservas</Link>
-            <Link to="/sobre" className="text-gray-600 hover:text-gray-800">Sobre</Link>
-            <Link to="/contatos" className="text-gray-600 hover:text-gray-800">Contato</Link>
+            <Link to="/" className="text-gray-600 hover:text-gray-800">
+              Início
+            </Link>
+            <Link to="/cardapio" className="text-gray-600 hover:text-gray-800">
+              Cardápio
+            </Link>
+            <Link to="/reservas" className="text-gray-600 hover:text-gray-800">
+              Reservas
+            </Link>
+            <Link to="/sobre" className="text-gray-600 hover:text-gray-800">
+              Sobre
+            </Link>
+            <Link to="/contatos" className="text-gray-600 hover:text-gray-800">
+              Contato
+            </Link>
           </nav>
           <Button
-          variant="outline"
-          size="icon"
-          className="md:hidden"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
+            variant="outline"
+            size="icon"
+            className="md:hidden"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             <Menu className="h-6 w-6" />
             <span className="sr-only">Abra o menu</span>
           </Button>
-            {isMenuOpen && (
+          {isMenuOpen && (
             <div
               className="fixed inset-0 bg-black bg-opacity-50 z-50"
               onClick={() => setIsMenuOpen(false)}
@@ -47,24 +61,54 @@ function App() {
               className="fixed top-0 left-0 w-64 bg-white h-full shadow-md z-50 p-4"
               onClick={(e) => e.stopPropagation()}
               >
-              <Button
-                variant="outline" size="icon"
-                className="absolute top-4 right-4"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <span className="sr-only">Fechar menu</span>
-                <X className="h-5 w-5" />
-              </Button>
-              <nav className="flex flex-col space-y-4 mt-8">
-                <Link to="/" className="text-gray-600 hover:text-gray-800" onClick={() => setIsMenuOpen(false)}>Início</Link>
-                <Link to="/cardapio" className="text-gray-600 hover:text-gray-800" onClick={() => setIsMenuOpen(false)}>Cardápio</Link>
-                <Link to="/reservas" className="text-gray-600 hover:text-gray-800" onClick={() => setIsMenuOpen(false)}>Reservas</Link>
-                <Link to="/sobre" className="text-gray-600 hover:text-gray-800" onClick={() => setIsMenuOpen(false)}>Sobre</Link>
-                <Link to="/contatos" className="text-gray-600 hover:text-gray-800" onClick={() => setIsMenuOpen(false)}>Contato</Link>
-              </nav>
+                <Button
+                  variant="outline" size="icon"
+                  className="absolute top-4 right-4"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <span className="sr-only">Fechar menu</span>
+                  <X className="h-5 w-5" />
+                </Button>
+                <nav className="flex flex-col space-y-4 mt-8">
+                  <Link
+                    to="/"
+                    className="text-gray-600 hover:text-gray-800"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Início
+                  </Link>
+                  <Link
+                    to="/cardapio"
+                    className="text-gray-600 hover:text-gray-800"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Cardápio
+                  </Link>
+                  <Link
+                    to="/reservas"
+                    className="text-gray-600 hover:text-gray-800"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Reservas
+                  </Link>
+                  <Link
+                    to="/sobre"
+                    className="text-gray-600 hover:text-gray-800"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Sobre
+                  </Link>
+                  <Link
+                    to="/contatos"
+                    className="text-gray-600 hover:text-gray-800"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Contato
+                  </Link>
+                </nav>
               </div>
             </div>
-            )}
+          )}
         </div>
       </header>
 
@@ -93,7 +137,9 @@ function App() {
               </ul>
             </div>
             <div>
-              <h3 className="text-xl font-semibold mb-4">Horário de funcionamento</h3>
+              <h3 className="text-xl font-semibold mb-4">
+                Horário de funcionamento
+              </h3>
               <ul className="space-y-2">
                 <li>Segunda não abre</li>
                 <li>Ter - Dom das 11:30 as 23:30</li>
@@ -103,8 +149,22 @@ function App() {
           <div className="mt-8 pt-8 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center">
             <p>&copy; 2024 Mascote. Todos os direitos reservados.</p>
             <div className="flex space-x-4 mt-4 md:mt-0">
-              <a href="https://www.facebook.com/restaurantemascotepg" className="hover:text-orange-500" target="_blank" rel="noopener noreferrer"><Facebook className="h-6 w-6" /></a>
-              <a href="https://www.instagram.com/restaurantemascote" className="hover:text-orange-500" target="_blank" rel="noopener noreferrer"><Instagram className="h-6 w-6" /></a>
+              <a
+                href="https://www.facebook.com/restaurantemascotepg"
+                className="hover:text-orange-500"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Facebook className="h-6 w-6" />
+              </a>
+              <a
+                href="https://www.instagram.com/restaurantemascote"
+                className="hover:text-orange-500"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Instagram className="h-6 w-6" />
+              </a>
             </div>
           </div>
         </div>
