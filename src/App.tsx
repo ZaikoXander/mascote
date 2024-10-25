@@ -8,6 +8,7 @@ import { Link, Route, Routes, useLocation } from "react-router-dom"
 import Home from "@/pages/Home"
 import Reservation from "@/pages/Reservation"
 import About from "@/pages/About"
+import Contact from "@/pages/Contact"
 
 import MobileMenu from "@/components/MobileMenu"
 
@@ -16,6 +17,8 @@ import { cn } from "@/lib/utils"
 function App() {
   const location = useLocation()
   const isOnReservationsPage = location.pathname === '/reservas'
+  const isOnContactPage = location.pathname === '/contato'
+  const isOnReservationsOrContactPage = isOnReservationsPage || isOnContactPage
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
@@ -62,11 +65,12 @@ function App() {
         </div>
       </header>
 
-      <main className={cn('flex-grow', { 'bg-gray-100 py-20': isOnReservationsPage })}>
+      <main className={cn('flex-grow', { 'bg-gray-100 py-20': isOnReservationsOrContactPage })}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/reservas" element={<Reservation />} />
           <Route path="/sobre" element={<About />} />
+          <Route path="/contato" element={<Contact />} />
         </Routes>
       </main>
 
