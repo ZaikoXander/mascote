@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button"
 
 import FeaturedDish from "@/components/FeaturedDish"
 
+import restaurantInterior from '@/assets/restaurant-interior.jpeg'
+
 import abadejoAModa from '@/assets/abadejo-a-moda.jpeg'
 import fileMingnonAparmegiana from '@/assets/file-mingnon-aparmegiana.jpeg'
 import portuguesaPizza from '@/assets/portuguesa-pizza.jpeg'
@@ -44,7 +46,7 @@ export default function Home() {
             </div>
             <div className="md:w-1/2">
               <img
-                src="/placeholder.svg?height=400&width=600"
+                src={restaurantInterior}
                 alt="Interior do restaurante"
                 className="rounded-lg shadow-lg"
               />
