@@ -12,18 +12,17 @@ import portuguesaPizza from '@/assets/portuguesa-pizza.jpeg'
 import mussarelaPizza from '@/assets/mussarela-pizza.jpeg'
 import calabresaPizza from '@/assets/calabresa-pizza.jpeg'
 
+const featuredDishes: IFeaturedDish[] = [
+  { name: "Abadejo a moda", image: abadejoAModa },
+  { name: "Abadejo abellemuniere", image: "/placeholder.svg?height=200&width=400" },
+  { name: "File mingnon aparmegiana", image: fileMingnonAparmegiana },
+  { name: "Pizza Portuguesa", image: portuguesaPizza },
+  { name: "Pizza Mussarela", image: mussarelaPizza },
+  { name: "Pizza Calabresa", image: calabresaPizza }
+]
+
 export default function Home() {
   const navigate = useNavigate()
-
-  const featuredDishes: IFeaturedDish[] = [
-    { name: "Abadejo a moda", image: abadejoAModa },
-    { name: "Abadejo abellemuniere", image: "/placeholder.svg?height=200&width=400" },
-    { name: "File mingnon aparmegiana", image: fileMingnonAparmegiana },
-    { name: "Pizza Portuguesa", image: portuguesaPizza },
-    { name: "Pizza Mussarela", image: mussarelaPizza },
-    { name: "Pizza Calabresa", image: calabresaPizza }
-  ]
-
   return (
     <>
       <section className="bg-gray-100 py-20">
