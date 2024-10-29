@@ -9,6 +9,7 @@ import FeaturedDish from "@/components/FeaturedDish"
 import restaurantInterior from '@/assets/restaurant-interior.jpeg'
 
 import abadejoAModa from '@/assets/abadejo-a-moda.jpeg'
+import abadejoAbellemuniere from '@/assets/abadejo-abellemuniere.jpeg'
 import fileMingnonAparmegiana from '@/assets/file-mingnon-aparmegiana.jpeg'
 import portuguesaPizza from '@/assets/portuguesa-pizza.jpeg'
 import mussarelaPizza from '@/assets/mussarela-pizza.jpeg'
@@ -16,7 +17,7 @@ import calabresaPizza from '@/assets/calabresa-pizza.jpeg'
 
 const featuredDishes: IFeaturedDish[] = [
   { name: "Abadejo a moda", image: abadejoAModa },
-  { name: "Abadejo abellemuniere", image: "/placeholder.svg?height=200&width=400" },
+  { name: "Abadejo abellemuniere", image: abadejoAbellemuniere },
   { name: "File mingnon aparmegiana", image: fileMingnonAparmegiana },
   { name: "Pizza Portuguesa", image: portuguesaPizza },
   { name: "Pizza Mussarela", image: mussarelaPizza },
