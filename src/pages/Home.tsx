@@ -26,6 +26,7 @@ const featuredDishes: IFeaturedDish[] = [
 
 export default function Home() {
   const navigate = useNavigate()
+
   return (
     <>
       <section className="bg-gray-100 py-20">

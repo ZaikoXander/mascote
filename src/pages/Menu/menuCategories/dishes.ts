@@ -552,12 +552,248 @@ const omeletesCategory: Category = {
   ]
 }
 
+const risotosEntireCategory: Category = {
+  name: "Risotos (Inteira)",
+  items: [
+    { "name": "Camarão", "price": "148,00" },
+    { "name": "Marisco", "price": "135,00" },
+    { "name": "Polvo", "price": "145,00" },
+    { "name": "Lula", "price": "145,00" },
+    { "name": "Atum", "price": "135,00" },
+    { "name": "Frango", "price": "135,00" },
+    { "name": "Frutos do Mar", "price": "160,00" },
+    { "name": "Camarão Rosa", "price": "180,00" }
+  ]
+}
+
+const risotosHalfCategory: Category = {
+  name: "Risotos (Meia)",
+  items: [
+    { "name": "Camarão", "price": "110,00" },
+    { "name": "Marisco", "price": "95,00" },
+    { "name": "Polvo", "price": "110,00" },
+    { "name": "Lula", "price": "110,00" },
+    { "name": "Atum", "price": "95,00" },
+    { "name": "Frango", "price": "95,00" },
+    { "name": "Frutos do Mar", "price": "115,00" },
+    { "name": "Camarão Rosa", "price": "135,00" }
+  ]
+}
+
+const mayonnaiseEntireCategory: Category = {
+  name: "Maionese (Inteira)",
+  items: [
+    { "name": "Camarão", "price": "123,00" },
+    { "name": "Atum", "price": "96,00" },
+    { "name": "Legumes", "price": "96,00" },
+    { "name": "Frango", "price": "96,00" }
+  ]
+}
+
+const mayonnaiseHalfCategory: Category = {
+  name: "Maionese (Meia)",
+  items: [
+    { "name": "Camarão", "price": "76,00" },
+    { "name": "Atum", "price": "66,00" },
+    { "name": "Legumes", "price": "66,00" },
+    { "name": "Frango", "price": "66,00" }
+  ]
+}
+
+const saladsEntireCategory: Category = {
+  name: "Saladas (Inteira)",
+  items: [
+    {
+      "name": "Mista",
+      "description": "alface, tomate, cebola, palmito, ervilha, azeitona",
+      "price": "80,00"
+    },
+    {
+      "name": "Palmito",
+      "description": "alface, tomate, cebola, palmito, ervilha, azeitona",
+      "price": "90,00"
+    },
+    {
+      "name": "Completa",
+      "description": "alface, tomate, cebola, palmito, ervilha, azeitona, ovo cozido, presunto, queijo, batata cozida, brócolis, couve flor",
+      "price": "92,00"
+    },
+    { "name": "Alface e Tomate", "price": "51,00" },
+    { "name": "Batata e Maionese", "price": "52,00" }
+  ]
+}
+
+const saladsHalfCategory: Category = {
+  name: "Saladas (Meia)",
+  items: [
+    {
+      "name": "Mista",
+      "description": "alface, tomate, cebola, palmito, ervilha, azeitona",
+      "price": "55,00"
+    },
+    {
+      "name": "Palmito",
+      "description": "alface, tomate, cebola, palmito, ervilha, azeitona",
+      "price": "60,00"
+    },
+    {
+      "name": "Completa",
+      "description": "alface, tomate, cebola, palmito, ervilha, azeitona, ovo cozido, presunto, queijo, batata cozida, brócolis, couve flor",
+      "price": "65,00"
+    },
+    { "name": "Alface e Tomate", "price": "36,00" },
+    { "name": "Batata e Maionese", "price": "50,00" }
+  ]
+}
+
+const miniDishesForTwoCategory: Category = {
+  name: "Mini Pratos (Para 2 pessoas)",
+  items: [
+    {
+      "name": "Mini Abadejo à Moda",
+      "description": "grelhado com legumes na manteiga, arroz à grega e fritas",
+      "price": "175,00"
+    },
+    {
+      "name": "Mini Abadejo à Flórida",
+      "description": "grelhado, maionese de legumes, arroz à grega, fritas e palmito",
+      "price": "180,00"
+    },
+    {
+      "name": "Mini Abadejo à Belle Muniere",
+      "description": "grelhado com arroz à grega, batata sauté e molho de alcaparra, camarão e champignon",
+      "price": "180,00"
+    }
+  ]
+}
+
+const miniFileDeLinguadoForTwoCategory: Category = {
+  name: "Mini Filé de Linguado (Para 2 pessoas)",
+  items: [
+    {
+      "name": "À Belle Muniere",
+      "description": "grelhado com arroz à grega, batata sauté e molho de alcaparra, camarão e champignon",
+      "price": "175,00"
+    }
+  ]
+}
+
+const miniFileDePescadaForTwoCategory: Category = {
+  name: "Mini Filé de Pescada (Para 2 pessoas)",
+  items: [
+    {
+      "name": "Mini à Moda",
+      "description": "à doré com arroz vermelho e frutos do mar",
+      "price": "158,00"
+    },
+    {
+      "name": "Mini ao Molho de Camarão",
+      "description": "à doré e arroz",
+      "price": "158,00"
+    },
+    {
+      "name": "Mini à Boa Vista",
+      "description": "arroz à grega, fritas, couve à doré e palmito",
+      "price": "135,00"
+    }
+  ]
+}
+
+const miniLomboForTwoCategory: Category = {
+  name: "Mini Lombo (Para 2 pessoas)",
+  items: [
+    {
+      "name": "Mini à Moda",
+      "description": "batata frita, arroz à grega e legumes",
+      "price": "139,00"
+    },
+    {
+      "name": "Mini à Gaúcha",
+      "description": "arroz branco, farofa, vinagrete e fritas",
+      "price": "138,00"
+    }
+  ]
+}
+
+const miniFileMignonForTwoCategory: Category = {
+  name: "Mini Filé Mignon (Para 2 pessoas)",
+  items: [
+    {
+      "name": "Mini à Moda",
+      "description": "grelhado com legumes na manteiga, arroz à grega e fritas",
+      "price": "165,00"
+    },
+    {
+      "name": "Mini à Cubana",
+      "description": "à milanesa com fritas, compotas (banana à milanesa, maçã à milanesa, abacaxi à milanesa) e arroz",
+      "price": "165,00"
+    },
+    {
+      "name": "Mini à Parmegiana",
+      "description": "com mussarela, molho ao sugo, arroz e fritas",
+      "price": "170,00"
+    },
+    {
+      "name": "Mini à Francesa",
+      "description": "grelhado com fritas, palmito, ervilha, cebola, presunto e arroz",
+      "price": "170,00"
+    },
+    {
+      "name": "Mini à Parisiense",
+      "description": "à milanesa, presunto, mussarela, arroz à grega, fritas e legumes",
+      "price": "170,00"
+    },
+    {
+      "name": "Mini Moda Lorde",
+      "description": "grelhado, arroz à grega, fritas, aspargo, champignon, molho madeira, melão e banana à milanesa",
+      "price": "170,00"
+    }
+  ]
+}
+
+const pastaEntireCategory: Category = {
+  name: "Massas (Inteira)",
+  items: [
+    { "name": "Espaguete ao Sugo", "price": "75,00" },
+    { "name": "Espaguete Alho e Óleo", "price": "77,00" },
+    { "name": "Espaguete Bolonhesa", "price": "79,00" },
+    { "name": "Espaguete Quatro Queijos", "price": "85,00" },
+    { "name": "Espaguete à Parisiense", "price": "85,00" },
+    { "name": "Espaguete com Frutos do Mar", "price": "120,00" }
+  ]
+}
+
+const pastaHalfCategory: Category = {
+  name: "Massas (Meia)",
+  items: [
+    { "name": "Espaguete ao Sugo", "price": "50,00" },
+    { "name": "Espaguete Alho e Óleo", "price": "55,00" },
+    { "name": "Espaguete Bolonhesa", "price": "55,00" },
+    { "name": "Espaguete Quatro Queijos", "price": "55,00" },
+    { "name": "Espaguete à Parisiense", "price": "55,00" },
+    { "name": "Espaguete com Frutos do Mar", "price": "100,00" }
+  ]
+}
+
+const feijoadaCategory: Category = {
+  name: "Feijoada (Somente aos sábados)",
+  items: [
+    { "name": "Feijoada por pessoa", "price": "90,00" },
+    { "name": "Para viagem", "price": "160,00" }
+  ]
+}
+
 const dishes = [
-  specialDishesCategory,
-  paellaEspanholaCategory, peixadasCategory, fileDeLinguadoCategory,
-  fileDePescadaCategory, bacalhauCategory, camaraoCategory,
-  saboresNaBrasa2people, saboresNaBrasa3people, frangosCategory,
-  fileMignonCategory, contraFileCategory, lomboCategory, omeletesCategory,
+  specialDishesCategory, paellaEspanholaCategory, peixadasCategory,
+  fileDeLinguadoCategory, fileDePescadaCategory, bacalhauCategory,
+  camaraoCategory, saboresNaBrasa2people, saboresNaBrasa3people,
+  frangosCategory, fileMignonCategory, contraFileCategory, lomboCategory,
+  omeletesCategory, risotosEntireCategory, risotosHalfCategory,
+  mayonnaiseEntireCategory, mayonnaiseHalfCategory, saladsEntireCategory,
+  saladsHalfCategory, miniDishesForTwoCategory,
+  miniFileDeLinguadoForTwoCategory, miniFileDePescadaForTwoCategory,
+  miniLomboForTwoCategory, miniFileMignonForTwoCategory, pastaEntireCategory,
+  pastaHalfCategory, feijoadaCategory
 ]
 
 export default dishes
