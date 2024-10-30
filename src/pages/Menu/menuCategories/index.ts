@@ -254,6 +254,125 @@ const pizzaCategory: Category = {
       name: 'Mussarela',
       description: 'mussarela, orégano e rodelas de tomate',
       price: '56,00'
+    },
+    {
+      name: 'Mussarela de Búfala',
+      description: 'mussarela de búfala, molho de tomate, orégano e azeitona',
+      price: '80,00'
+    },
+    {
+      name: 'Palmito',
+      description: 'palmito, mussarela e orégano',
+      price: '77,00'
+    },
+    {
+      name: 'Pampa',
+      description: 'palmito, provolone, ovos, orégano e azeitona',
+      price: '80,00'
+    },
+    {
+      name: 'Paulista',
+      description: 'ricota, catupiry, orégano e azeitona',
+      price: '71,00'
+    },
+    {
+      name: 'Peperoni',
+      description: 'peperoni, mussarela e cebola',
+      price: '80,00'
+    },
+    {
+      name: 'Peruana',
+      description: 'frango desfiado, ervilha, cebola e mussarela',
+      price: '75,00'
+    },
+    {
+      name: 'Presunto',
+      description: 'presunto e mussarela',
+      price: '70,00'
+    },
+    {
+      name: 'Portuguesa',
+      description: 'presunto, ovos, ervilha, palmito, cebola e mussarela',
+      price: '80,00'
+    },
+    {
+      name: 'Quatro Queijos',
+      description: 'mussarela, catupiry, provolone e parmesão',
+      price: '80,00'
+    },
+    {
+      name: 'Romana',
+      description: 'mussarela, rodelas de tomate, aliche e cebola',
+      price: '80,00'
+    },
+    {
+      name: 'Ronny Hein',
+      description: 'mussarela, catupiry, champignon, parmesão e orégano',
+      price: '80,00'
+    },
+    {
+      name: 'São Bernardo',
+      description: 'frango, presunto, calabresa, cebola, palmito, catupiry, parmesão, orégano e azeitona',
+      price: '95,00'
+    },
+    {
+      name: 'Siciliana',
+      description: 'mussarela, champignon, cebola e bacon',
+      price: '80,00'
+    },
+    {
+      name: 'Suprema',
+      description: 'mussarela, presunto, calabresa, champignon e cebola',
+      price: '80,00'
+    },
+    {
+      name: 'Tomate Seco',
+      description: 'mussarela, tomate seco e azeitona',
+      price: '75,00'
+    },
+    {
+      name: 'Toscana',
+      description: 'mussarela, calabresa e cebola',
+      price: '70,00'
+    },
+    {
+      name: 'Três Queijos',
+      description: 'mussarela, cheddar, provolone, orégano e azeitona',
+      price: '71,00'
+    },
+    {
+      name: 'Tropical',
+      description: 'calabresa moída, palmito, bacon, mussarela, tomate, parmesão, orégano e azeitona',
+      price: '80,00'
+    },
+    {
+      name: 'Xuxa',
+      description: 'mussarela, parmesão e manjericão',
+      price: '75,00'
+    },
+    {
+      name: 'Vegetariana',
+      description: 'escarola, parmesão, alho, palmito, ervilha, champignon, orégano e azeitona',
+      price: '78,00'
+    },
+    {
+      name: 'Bordas Recheadas',
+      description: 'bordas recheadas de catupiry ou cheddar',
+      price: '15,00'
+    }
+  ]
+}
+
+const sweetPizzaCategory: Category = {
+  name: 'Pizzas Doces',
+  items: [
+    {
+      name: 'Brigadeiro',
+      price: '80,00'
+    },
+    {
+      name: 'Romeu e Julieta',
+      price: '80,00'
     }
   ]
 }
@@ -413,7 +532,7 @@ const portionsCategory: Category = {
 }
 
 const menuCategories: Category[] = [
-  pizzaCategory, portionsCategory,  ...dishes,
+  pizzaCategory, sweetPizzaCategory, portionsCategory,  ...dishes,
 ]
 
 export default menuCategories
