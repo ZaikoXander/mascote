@@ -3,7 +3,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { MapPin, Phone, Facebook, Instagram, Menu as MenuIcon } from "lucide-react"
 
-import { Link, Route, Routes, useLocation } from "react-router-dom"
+import { Link, Navigate, Route, Routes, useLocation } from "react-router-dom"
 
 import Home from "@/pages/Home"
 import Reservation from "@/pages/Reservation"
@@ -71,6 +71,7 @@ function App() {
           <Route path="/sobre" element={<About />} />
           <Route path="/contato" element={<Contact />} />
           <Route path="/cardapio" element={<Menu />} />
+          <Route path="*" element={<Navigate to="/" />} /> {/* Catch-all route */}
         </Routes>
       </main>
 
