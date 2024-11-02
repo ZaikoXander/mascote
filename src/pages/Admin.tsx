@@ -12,12 +12,6 @@ import { LogOut } from "lucide-react"
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 
-const messages = [
-  { id: 1, name: "Alice Brown", email: "alice@example.com", subject: "Dietary Requirements", date: "2023-06-14" },
-  { id: 2, name: "Charlie Davis", email: "charlie@example.com", subject: "Private Event Inquiry", date: "2023-06-15" },
-  { id: 3, name: "Eva White", email: "eva@example.com", subject: "Feedback", date: "2023-06-16" },
-]
-
 interface Reservation {
   created_at: string
   date: string
@@ -32,13 +26,34 @@ interface Reservation {
   updated_at: string
 }
 
+interface Message {
+  content: string
+  created_at: string
+  email: string
+  id: number
+  name: string
+  subject: string
+  updated_at: string
+}
+
 function formatDate(dateString: string): string {
   const [year, month, day] = dateString.split("-");
   return `${day}/${month}/${year}`;
 }
 
+function formatDateTime(dateTimeString: string): string {
+  const date = new Date(dateTimeString);
+  const day = String(date.getDate()).padStart(2, '0');
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const year = date.getFullYear();
+  const hours = String(date.getHours()).padStart(2, '0');
+  const minutes = String(date.getMinutes()).padStart(2, '0');
+  return `${day}/${month}/${year} ${hours}:${minutes}`;
+}
+
 export default function Admin() {
   const [reservations, setReservations] = useState<Reservation[]>([])
+  const [messages, setMessages] = useState<Message[]>([])
 
   useEffect(() => {
     async function fetchReservations() {
@@ -47,7 +62,14 @@ export default function Admin() {
       setReservations(data)
     }
 
+    async function fetchMessages() {
+      const { data }: { data: Message[] } =
+        await axios.get('http://localhost:3000/messages')
+      setMessages(data)
+    }
+
     fetchReservations()
+    fetchMessages()
   }, [])
 
   return (
@@ -128,7 +150,7 @@ export default function Admin() {
                       <TableCell>{message.name}</TableCell>
                       <TableCell>{message.email}</TableCell>
                       <TableCell>{message.subject}</TableCell>
-                      <TableCell>{formatDate(message.date)}</TableCell>
+                      <TableCell>{formatDateTime(message.created_at)}</TableCell>
                       <TableCell>
                         <Button variant="outline" size="sm">Ver</Button>
                       </TableCell>
@@ -143,7 +165,7 @@ export default function Admin() {
 
       <footer className="bg-gray-800 text-white py-4">
         <div className="container mx-auto px-4 text-center">
-          <p>&copy; 2023 Gourmet Haven Admin. All rights reserved.</p>
+          <p>&copy; 2024 Mascote. Todos os direitos reservados.</p>
         </div>
       </footer>
     </div>
