@@ -11,6 +11,10 @@ import api from "@/lib/api"
 import { Link } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 
+import useMessageStore from "@/store/useMessagesStore"
+
+import { formatDate, formatDateTime } from "./helper"
+
 interface Reservation {
   created_at: string
   date: string
@@ -25,34 +29,9 @@ interface Reservation {
   updated_at: string
 }
 
-interface Message {
-  content: string
-  created_at: string
-  email: string
-  id: number
-  name: string
-  subject: string
-  updated_at: string
-}
-
-function formatDate(dateString: string): string {
-  const [year, month, day] = dateString.split("-");
-  return `${day}/${month}/${year}`;
-}
-
-function formatDateTime(dateTimeString: string): string {
-  const date = new Date(dateTimeString);
-  const day = String(date.getDate()).padStart(2, '0');
-  const month = String(date.getMonth() + 1).padStart(2, '0');
-  const year = date.getFullYear();
-  const hours = String(date.getHours()).padStart(2, '0');
-  const minutes = String(date.getMinutes()).padStart(2, '0');
-  return `${day}/${month}/${year} ${hours}:${minutes}`;
-}
-
 export default function Main() {
   const [reservations, setReservations] = useState<Reservation[]>([])
-  const [messages, setMessages] = useState<Message[]>([])
+  const { messages, fetchMessages } = useMessageStore()
 
   useEffect(() => {
     async function fetchReservations() {
@@ -60,14 +39,9 @@ export default function Main() {
       setReservations(data)
     }
 
-    async function fetchMessages() {
-      const { data }: { data: Message[] } = await api.get('/messages')
-      setMessages(data)
-    }
-
     fetchReservations()
     fetchMessages()
-  }, [])
+  }, [fetchMessages])
 
   return (
     <>

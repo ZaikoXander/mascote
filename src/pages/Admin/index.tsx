@@ -3,7 +3,7 @@ import { LogOut } from "lucide-react"
 import { Link, Route, Routes } from "react-router-dom"
 
 import Main from "./Main"
-// import Message from "./Message"
+import Message from "./Message"
 
 export default function Admin() {
   return (
@@ -37,7 +37,7 @@ export default function Admin() {
         <div className="container mx-auto space-y-8">
           <Routes>
             <Route path="*" element={<Main />} />
-            {/* <Route path="/messages/*" element={<Message />} /> */}
+            <Route path="/messages/:id" element={<Message />} />
           </Routes>
         </div>
       </main>
