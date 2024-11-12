@@ -1,3 +1,5 @@
+import { useEffect } from "react"
+
 import { Button } from "@/components/ui/button"
 import { LogOut } from "lucide-react"
 import { Link, Route, Routes } from "react-router-dom"
@@ -5,7 +7,48 @@ import { Link, Route, Routes } from "react-router-dom"
 import Main from "./Main"
 import Message from "./Message"
 
+import api from "@/lib/api"
+
+import { useNavigate } from 'react-router-dom';
+
 export default function Admin() {
+  const navigate = useNavigate();
+
+  function getLocalStorageItems() {
+    const accessToken = localStorage.getItem('access-token')
+    const client = localStorage.getItem('client')
+    const uid = localStorage.getItem('uid')
+
+    return { accessToken, client, uid }
+  }
+
+  function resetLocalStorageItems() {
+    localStorage.removeItem('access-token')
+    localStorage.removeItem('client')
+    localStorage.removeItem('uid')
+  }
+
+  useEffect(() => {
+    async function validateToken() {
+      const { accessToken, client, uid }  = getLocalStorageItems()
+  
+      try {
+        await api.get('/auth/validate_token', {
+          headers: {
+            'access-token': accessToken,
+            'client': client,
+            'uid': uid
+          } 
+        })
+      } catch {
+        navigate('/admin/login')
+        resetLocalStorageItems()
+      }
+    }
+
+    validateToken()
+  }, [navigate])
+
   return (
     <div className="flex flex-col min-h-screen bg-gray-100">
       <header className="bg-white shadow-md">
