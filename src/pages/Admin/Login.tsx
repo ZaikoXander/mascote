@@ -42,6 +42,34 @@ export default function Login() {
   }
 
   useEffect(() => {
+    async function verifyAdminAuth() {
+      const accessToken = localStorage.getItem('access-token');
+      const client = localStorage.getItem('client');
+      const uid = localStorage.getItem('uid');
+
+      if (accessToken && client && uid) {
+        try {
+          const { data: { success } } = await api.get('/auth/validate_token', {
+            headers: {
+              'access-token': accessToken,
+              'client': client,
+              'uid': uid
+            }
+          });
+
+          if (success) {
+            navigate('/admin');
+          }
+        } catch (error) {
+          console.error('Token validation failed:', error);
+        }
+      }
+    };
+
+    verifyAdminAuth();
+  }, [navigate]);
+
+  useEffect(() => {
     if (success) {
       const timer = setTimeout(() => {
         navigate('/admin');
