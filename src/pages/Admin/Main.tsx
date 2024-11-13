@@ -1,3 +1,5 @@
+import { useEffect } from "react"
+
 import {
   Table,
   TableBody,
@@ -6,44 +8,34 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-import { useEffect, useState } from "react"
-import api from "@/lib/api"
-import { Link } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 
-import useMessageStore from "@/store/useMessagesStore"
+import api from "@/lib/api"
+
+import { Link } from "react-router-dom"
+
+import useReservationsStore from "./store/useReservationStore"
+import useMessagesStore from "./store/useMessagesStore"
 
 import { formatDate, formatDateTime } from "./helper"
-import type Message from "./types/Message"
 
-interface Reservation {
-  created_at: string
-  date: string
-  email: string
-  id: number
-  name: string
-  number_of_guests: number
-  observations: string
-  phone_number: string
-  table: number
-  time: string
-  updated_at: string
-}
+import type Message from "./types/Message"
+import type Reservation from "./types/Reservation"
 
 export default function Main() {
-  const [reservations, setReservations] = useState<Reservation[]>([])
-  const { messages, setMessages } = useMessageStore()
+  const { reservations, setReservations } = useReservationsStore()
+  const { messages, setMessages } = useMessagesStore()
 
   useEffect(() => {
-    async function fetchReservations() {
+    async function fetchReservations(): Promise<Reservation[]> {
       const authToken = localStorage.getItem('auth-token')
 
       try {
         const { data }: { data: Reservation[] } =
           await api.get('/reservations', {
-          headers: {
-            'Authorization': authToken
-          }
+            headers: {
+              'Authorization': authToken
+            }
           })
 
         return data
@@ -53,16 +45,15 @@ export default function Main() {
       }
     }
 
-    async function fetchMessages() {
+    async function fetchMessages(): Promise<Message[]> {
       const authToken = localStorage.getItem('auth-token')
 
       try {
-        const { data }: { data: Message[] } =
-          await api.get('/messages', {
+        const { data }: { data: Message[] } = await api.get('/messages', {
           headers: {
             'Authorization': authToken
           }
-          })
+        })
 
         return data
       } catch (error) {
@@ -72,13 +63,15 @@ export default function Main() {
     }
 
     async function fetchData() {
-      const [reservationsData, messagesData] = await Promise.all([fetchReservations(), fetchMessages()])
+      const [reservationsData, messagesData] =
+        await Promise.all([fetchReservations(), fetchMessages()])
+
       setReservations(reservationsData)
       setMessages(messagesData)
     }
 
     fetchData()
-  }, [setMessages])
+  }, [setMessages, setReservations])
 
   return (
     <>

@@ -3,7 +3,7 @@ import { Label } from "@/components/ui/label";
 import { ArrowLeft } from "lucide-react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
-import useMessageStore from "@/store/useMessagesStore";
+import useMessagesStore from "@/pages/Admin/store/useMessagesStore";
 
 import { formatDateTime } from "./helper";
 
@@ -19,7 +19,7 @@ function DashboardLink() {
 export default function Message() {
   const navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
-  const { getMessageById } = useMessageStore();
+  const { getMessageById } = useMessagesStore();
   
   const message = getMessageById(Number(id));
 

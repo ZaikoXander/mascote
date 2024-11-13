@@ -8,10 +8,10 @@ interface MessageState {
   getMessageById: (id: number) => Message | undefined;
 }
 
-const useMessageStore = create<MessageState>((set, get) => ({
+const useMessagesStore = create<MessageState>((set, get) => ({
   messages: [],
   setMessages: (messages) => set({ messages }),
   getMessageById: (id) => get().messages?.find((message) => message.id === id)
 }));
 
-export default useMessageStore;
+export default useMessagesStore;
