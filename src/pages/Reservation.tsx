@@ -7,7 +7,9 @@ import {
   Select, SelectContent, SelectItem, SelectTrigger, SelectValue
 } from "@/components/ui/select";
 
-import axios, { AxiosError } from "axios";
+import type { AxiosError } from "axios";
+
+import api from "@/lib/api";
 
 export default function Reservation() {
   const dateInputRef = useRef<HTMLInputElement>(null);
@@ -52,7 +54,7 @@ export default function Reservation() {
 
       const cleanedPhoneNumber = phoneNumber.replace(/\D/g, '')
 
-      const { data } = await axios.post('http://localhost:3000/reservations', {
+      const { data } = await api.post('/reservations', {
         name,
         email,
         phone_number: cleanedPhoneNumber,
