@@ -7,23 +7,41 @@ import { Label } from "@/components/ui/label"
 
 import { MapPin, Phone, Clock, Facebook, Instagram } from "lucide-react"
 
+import api from "@/lib/api"
+
 export default function Contact() {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [subject, setSubject] = useState('')
   const [message, setMessage] = useState('')
+  const [success, setSuccess] = useState(false)
+  const [error, setError] = useState('')
 
-  function resetForm() {
+  function resetFormValues() {
     setName('')
     setEmail('')
     setSubject('')
     setMessage('')
   }
 
-  function handleSubmit(e: React.FormEvent) {
-    e.preventDefault()
-    alert('Mensagem enviada com sucesso!')
-    resetForm()
+  async function handleSubmit(e: React.FormEvent) {
+    try {
+      e.preventDefault()
+
+      await api.post('/messages', {
+        name,
+        email,
+        subject,
+        content: message,
+      })
+  
+      resetFormValues()
+      setSuccess(true)
+      setError('')
+    } catch (error) {
+      console.error(error)
+      setError('Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente.')
+    }
   }
 
   return (
@@ -81,6 +99,16 @@ export default function Contact() {
         </div>
         <div>
           <h3 className="text-xl font-semibold mb-4">Envie-nos uma Mensagem</h3>
+          {success && (
+            <div className="p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg" role="alert">
+              Sua mensagem foi enviada com sucesso!
+            </div>
+          )}
+          {error && (
+            <div className="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg" role="alert">
+              {error}
+            </div>
+          )}
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="name">Nome</Label>

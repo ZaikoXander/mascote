@@ -48,6 +48,16 @@ export default function Reservation() {
     }
   };
 
+  function resetFormValues() {
+    setName('');
+    setEmail('');
+    setPhoneNumber('');
+    setNumberOfGuests('');
+    setDate('');
+    setTime('');
+    setObservations('');
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     try {
       e.preventDefault();
@@ -67,14 +77,7 @@ export default function Reservation() {
       setTable(data.table);
       setFeedbackMessage('Sua reserva está confirmada!');
 
-      // Reset form values
-      setName('');
-      setEmail('');
-      setPhoneNumber('');
-      setNumberOfGuests('');
-      setDate('');
-      setTime('');
-      setObservations('');
+      resetFormValues()
     } catch (error) {
       console.error(error);
 
