@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 
 import { Button } from "@/components/ui/button"
 import { LogOut } from "lucide-react"
@@ -13,33 +13,19 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Admin() {
   const navigate = useNavigate();
-
-  function getLocalStorageItems() {
-    const accessToken = localStorage.getItem('access-token')
-    const client = localStorage.getItem('client')
-    const uid = localStorage.getItem('uid')
-
-    return { accessToken, client, uid }
-  }
-
-  function resetLocalStorageItems() {
-    localStorage.removeItem('access-token')
-    localStorage.removeItem('client')
-    localStorage.removeItem('uid')
-  }
+  const [isUserAuthenticated, setIsUserAuthenticated] = useState(false)
 
   async function handleLogout() {
     try {
-      const { accessToken, client, uid } = getLocalStorageItems();
+      const authToken = localStorage.getItem('auth-token')
 
       await api.delete('/auth/sign_out', {
         headers: {
-          'access-token': accessToken,
-          'client': client,
-          'uid': uid
+          'Authorization': authToken
         }
       });
-      resetLocalStorageItems();
+
+      localStorage.removeItem('auth-token')
       navigate('/');
     } catch (error) {
       console.error('Failed to log out:', error);
@@ -48,24 +34,27 @@ export default function Admin() {
 
   useEffect(() => {
     async function validateToken() {
-      const { accessToken, client, uid }  = getLocalStorageItems()
+      const authToken = localStorage.getItem('auth-token')
   
       try {
         await api.get('/auth/validate_token', {
           headers: {
-            'access-token': accessToken,
-            'client': client,
-            'uid': uid
+            'Authorization': authToken
           } 
         })
-      } catch {
+
+        setIsUserAuthenticated(true)
+      } catch (error) {
+        console.error(error)
+        localStorage.removeItem('auth-token')
         navigate('/admin/login')
-        resetLocalStorageItems()
       }
     }
 
     validateToken()
   }, [navigate])
+
+  if (!isUserAuthenticated) return null
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-100">

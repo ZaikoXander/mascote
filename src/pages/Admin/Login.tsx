@@ -15,6 +15,7 @@ export default function Login() {
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const [success, setSuccess] = useState(false)
+  const [isUserAuthenticated, setIsUserAuthenticated] = useState(false)
 
   const navigate = useNavigate();
 
@@ -27,14 +28,12 @@ export default function Login() {
       setError('')
 
       try {
-        const { headers: { 'access-token': accessToken, client, uid } } =
+        const { headers: { authorization } } =
           await api.post('/auth/sign_in', { email, password })
 
         setSuccess(true)
 
-        localStorage.setItem('access-token', accessToken);
-        localStorage.setItem('client', client);
-        localStorage.setItem('uid', uid);
+        localStorage.setItem('auth-token', authorization);
       } catch {
         setError('Email ou senha inválidos.')
       }
@@ -42,31 +41,28 @@ export default function Login() {
   }
 
   useEffect(() => {
-    async function verifyAdminAuth() {
-      const accessToken = localStorage.getItem('access-token');
-      const client = localStorage.getItem('client');
-      const uid = localStorage.getItem('uid');
+    async function validateToken() {
+      const authToken = localStorage.getItem('auth-token');
 
-      if (accessToken && client && uid) {
+      if (authToken) {
         try {
           const { data: { success } } = await api.get('/auth/validate_token', {
             headers: {
-              'access-token': accessToken,
-              'client': client,
-              'uid': uid
+              'Authorization': authToken,
             }
           });
 
           if (success) {
-            navigate('/admin');
+            setIsUserAuthenticated(true)
+            navigate('/admin')
           }
-        } catch (error) {
-          console.error('Token validation failed:', error);
+        } catch {
+          localStorage.removeItem('auth-token');
         }
       }
     };
 
-    verifyAdminAuth();
+    validateToken();
   }, [navigate]);
 
   useEffect(() => {
@@ -77,6 +73,8 @@ export default function Login() {
       return () => clearTimeout(timer)
     }
   }, [navigate, success])
+
+  if (isUserAuthenticated) return null
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">

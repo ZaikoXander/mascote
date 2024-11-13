@@ -1,37 +1,43 @@
-import { useEffect } from "react";
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { ArrowLeft } from "lucide-react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 import useMessageStore from "@/store/useMessagesStore";
 
 import { formatDateTime } from "./helper";
 
-export default function Message() {
-  const { id } = useParams<{ id: string }>();
-  const { getMessageById, fetchMessages } = useMessageStore();
+function DashboardLink() {
+  return (
+    <Link to="/admin" className="flex items-center text-gray-600 hover:text-gray-800 mb-6">
+      <ArrowLeft className="h-4 w-4 mr-2" />
+      Voltar para o Dashboard
+    </Link>
+  )
+}
 
-  useEffect(() => {
-    fetchMessages()
-  }, [fetchMessages])
+export default function Message() {
+  const navigate = useNavigate();
+  const { id } = useParams<{ id: string }>();
+  const { getMessageById } = useMessageStore();
   
   const message = getMessageById(Number(id));
 
   if (!message) {
+    setTimeout(() => { navigate('/admin') }, 2000)
+
     return (
       <>
-        <Link to="/admin" className="flex items-center text-gray-600 hover:text-gray-800 mb-6">
-          <ArrowLeft className="h-4 w-4 mr-2" />
-          Voltar para o Dashboard
-        </Link>
+        <DashboardLink />
         <Card>
           <CardHeader>
             <CardTitle className="text-2xl font-bold">
               Mensagem não encontrada
             </CardTitle>
           </CardHeader>
+          <CardContent>
+            <p>Redirecionando para a página do Dashboard...</p>
+          </CardContent>
         </Card>
       </>
     )
@@ -39,10 +45,7 @@ export default function Message() {
 
   return (
     <>
-      <Link to="/admin" className="flex items-center text-gray-600 hover:text-gray-800 mb-6">
-        <ArrowLeft className="h-4 w-4 mr-2" />
-        Voltar para o Dashboard
-      </Link>
+      <DashboardLink />
       <Card>
         <CardHeader>
           <CardTitle className="text-2xl font-bold">

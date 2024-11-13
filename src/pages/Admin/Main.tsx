@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/button"
 import useMessageStore from "@/store/useMessagesStore"
 
 import { formatDate, formatDateTime } from "./helper"
+import type Message from "./types/Message"
 
 interface Reservation {
   created_at: string
@@ -31,17 +32,53 @@ interface Reservation {
 
 export default function Main() {
   const [reservations, setReservations] = useState<Reservation[]>([])
-  const { messages, fetchMessages } = useMessageStore()
+  const { messages, setMessages } = useMessageStore()
 
   useEffect(() => {
     async function fetchReservations() {
-      const { data }: { data: Reservation[] } = await api.get('/reservations')
-      setReservations(data)
+      const authToken = localStorage.getItem('auth-token')
+
+      try {
+        const { data }: { data: Reservation[] } =
+          await api.get('/reservations', {
+          headers: {
+            'Authorization': authToken
+          }
+          })
+
+        return data
+      } catch (error) {
+        console.error(error)
+        return []
+      }
     }
 
-    fetchReservations()
-    fetchMessages()
-  }, [fetchMessages])
+    async function fetchMessages() {
+      const authToken = localStorage.getItem('auth-token')
+
+      try {
+        const { data }: { data: Message[] } =
+          await api.get('/messages', {
+          headers: {
+            'Authorization': authToken
+          }
+          })
+
+        return data
+      } catch (error) {
+        console.error(error)
+        return []
+      }
+    }
+
+    async function fetchData() {
+      const [reservationsData, messagesData] = await Promise.all([fetchReservations(), fetchMessages()])
+      setReservations(reservationsData)
+      setMessages(messagesData)
+    }
+
+    fetchData()
+  }, [setMessages])
 
   return (
     <>
