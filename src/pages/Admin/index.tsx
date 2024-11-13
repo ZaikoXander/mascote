@@ -65,13 +65,11 @@ export default function Admin() {
               Mascote
             </h1>
           </Link>
-          {/* <nav className="hidden md:flex space-x-4">
-            <a href="#" className="text-gray-600 hover:text-gray-800">Dashboard</a>
-            <a href="#" className="text-gray-600 hover:text-gray-800">Reservations</a>
-            <a href="#" className="text-gray-600 hover:text-gray-800">Messages</a>
-            <a href="#" className="text-gray-600 hover:text-gray-800">Menu Editor</a>
-            <a href="#" className="text-gray-600 hover:text-gray-800">Settings</a>
-          </nav> */}
+          <nav className="hidden md:flex space-x-4">
+            <Link to="/admin/create" className="text-gray-600 hover:text-gray-800">
+              Criar novo Administrador
+            </Link>
+          </nav>
           <div className="flex items-center space-x-4">
             {/* <Button variant="ghost" size="icon">
               <User className="h-5 w-5" />
