@@ -1,14 +1,18 @@
 import { useEffect, useState } from 'react'
+
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+
 import { Lock, AlertTriangle, CheckCircle } from "lucide-react"
 
 import api from '@/lib/api'
 
 import { useNavigate } from 'react-router-dom';
+
+import type { AxiosError } from 'axios'
 
 export default function AdminLogin() {
   const [email, setEmail] = useState('')
@@ -34,8 +38,17 @@ export default function AdminLogin() {
         setSuccess(true)
 
         localStorage.setItem('auth-token', authorization);
-      } catch {
-        setError('Email ou senha inválidos.')
+      } catch (e) {
+        const axiosError = e as AxiosError
+
+        const axiosErrorResponseData = axiosError.response?.data as { errors: string[], success: boolean }
+
+        if (axiosErrorResponseData?.errors && axiosErrorResponseData?.errors[0] === "Invalid login credentials. Please try again.") {
+          setError('Email ou senha inválidos.')
+          return
+        }
+
+        setError('Ocorreu um erro ao tentar fazer login. Por favor, tente novamente.')
       }
     }
   }
