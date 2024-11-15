@@ -7,7 +7,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 
 import useReservationsStore from "./store/useReservationStore";
 
-import { formatDateTime } from "./helper";
+import { formatDateTime } from "../helper";
 
 function DashboardLink() {
   return (
