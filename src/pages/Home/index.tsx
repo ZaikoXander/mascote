@@ -1,12 +1,9 @@
-import type FeaturedDishData from "@/types/FeaturedDish"
-
 import { useNavigate } from "react-router-dom"
 
 import { Button } from "@/components/ui/button"
 
+import RestaurantImagesCarousel from "./RestaurantImagesCarousel"
 import FeaturedDish from "./FeaturedDish"
-
-import restaurantInterior from '@/assets/restaurant-interior.jpeg'
 
 import abadejoAModa from '@/assets/abadejo-a-moda.jpeg'
 import abadejoAbellemuniere from '@/assets/abadejo-abellemuniere.jpeg'
@@ -14,6 +11,8 @@ import fileMingnonAparmegiana from '@/assets/file-mingnon-aparmegiana.jpeg'
 import portuguesaPizza from '@/assets/portuguesa-pizza.jpeg'
 import mussarelaPizza from '@/assets/mussarela-pizza.jpeg'
 import calabresaPizza from '@/assets/calabresa-pizza.jpeg'
+
+import type FeaturedDishData from "@/types/FeaturedDish"
 
 const featuredDishes: FeaturedDishData[] = [
   { name: "Abadejo a moda", image: abadejoAModa },
@@ -47,11 +46,7 @@ export default function Home() {
               </Button>
             </div>
             <div className="md:w-1/2">
-              <img
-                src={restaurantInterior}
-                alt="Interior do restaurante"
-                className="rounded-lg shadow-lg"
-              />
+              <RestaurantImagesCarousel />
             </div>
           </div>
         </div>
