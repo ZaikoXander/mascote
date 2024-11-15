@@ -65,10 +65,16 @@ export default function CreateAdmin() {
     }
 
     try {
+      const authToken = localStorage.getItem('auth-token')
+
       await api.post('/auth', {
         email,
         password,
         password_confirmation: confirmPassword,
+      }, {
+        headers: {
+          'Authorization': authToken
+        }
       })
 
       setError('')
