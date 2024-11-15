@@ -10,7 +10,7 @@ import api from '@/lib/api'
 
 import { useNavigate } from 'react-router-dom';
 
-export default function Login() {
+export default function AdminLogin() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')

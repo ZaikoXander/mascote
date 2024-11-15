@@ -4,9 +4,9 @@ import { Button } from "@/components/ui/button"
 import { LogOut } from "lucide-react"
 import { Link, Route, Routes } from "react-router-dom"
 
-import Main from "./Main"
-import Message from "./Message"
-import Reservation from "./Reservation"
+import Main from "./pages/Main"
+import Message from "./pages/Message"
+import Reservation from "./pages/Reservation"
 
 import api from "@/lib/api"
 

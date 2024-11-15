@@ -1,11 +1,13 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
+
 import { ArrowLeft } from "lucide-react";
+
 import { Link, useNavigate, useParams } from "react-router-dom";
 
-import useMessagesStore from "@/pages/Admin/store/useMessagesStore";
+import useMessagesStore from "@/pages/Admin/pages/store/useMessagesStore";
 
-import { formatDateTime } from "./helper";
+import { formatDateTime } from "../helper";
 
 function DashboardLink() {
   return (

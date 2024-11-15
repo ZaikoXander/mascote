@@ -17,7 +17,7 @@ import { Link } from "react-router-dom"
 import useReservationsStore from "./store/useReservationStore"
 import useMessagesStore from "./store/useMessagesStore"
 
-import { formatDate, formatDateTime } from "./helper"
+import { formatDate, formatDateTime } from "../helper"
 
 import type Message from "./types/Message"
 import type Reservation from "./types/Reservation"

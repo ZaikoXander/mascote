@@ -12,7 +12,7 @@ import api from '@/lib/api'
 
 import { Link, useNavigate } from 'react-router-dom'
 
-export default function Create() {
+export default function CreateAdmin() {
   const navigate = useNavigate();
 
   const [isUserAuthenticated, setIsUserAuthenticated] = useState(false)

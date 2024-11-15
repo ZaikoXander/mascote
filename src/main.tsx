@@ -4,8 +4,8 @@ import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 
 import App from './App'
 import Admin from './pages/Admin'
-import AdminLogin from './pages/Admin/Login';
-import CreateAdmin from './pages/Admin/Create';
+import AdminLogin from './pages/AdminLogin';
+import CreateAdmin from './pages/CreateAdmin';
 
 import './index.css'
 

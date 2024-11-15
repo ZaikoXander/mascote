@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-import type Message from '@/pages/Admin/types/Message';
+import type Message from '@/pages/Admin/pages/types/Message';
 
 interface MessageState {
   messages: Message[];
