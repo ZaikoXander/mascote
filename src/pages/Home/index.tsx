@@ -5,12 +5,12 @@ import { Button } from "@/components/ui/button"
 import RestaurantImagesCarousel from "./RestaurantImagesCarousel"
 import FeaturedDish from "./FeaturedDish"
 
-import abadejoAModa from '@/assets/abadejo-a-moda.jpeg'
-import abadejoAbellemuniere from '@/assets/abadejo-abellemuniere.jpeg'
-import fileMingnonAparmegiana from '@/assets/file-mingnon-aparmegiana.jpeg'
-import portuguesaPizza from '@/assets/portuguesa-pizza.jpeg'
-import mussarelaPizza from '@/assets/mussarela-pizza.jpeg'
-import calabresaPizza from '@/assets/calabresa-pizza.jpeg'
+import abadejoAModa from './assets/abadejo-a-moda.jpeg'
+import abadejoAbellemuniere from './assets/abadejo-abellemuniere.jpeg'
+import fileMingnonAparmegiana from './assets/file-mingnon-aparmegiana.jpeg'
+import portuguesaPizza from './assets/portuguesa-pizza.jpeg'
+import mussarelaPizza from './assets/mussarela-pizza.jpeg'
+import calabresaPizza from './assets/calabresa-pizza.jpeg'
 
 import type FeaturedDishData from "@/types/FeaturedDish"
 

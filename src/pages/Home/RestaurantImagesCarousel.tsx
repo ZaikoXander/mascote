@@ -3,7 +3,7 @@ import {
 } from "@/components/ui/carousel"
 import { Card, CardContent } from "@/components/ui/card"
 
-import restaurantInterior from '@/assets/restaurant-interior.jpeg'
+import restaurantInterior from './assets/restaurant-interior.jpeg'
 
 import Map from "@/components/helpers/Map"
 
