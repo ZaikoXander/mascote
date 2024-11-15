@@ -1,7 +1,7 @@
 import { Navigate, Route, Routes, useLocation } from "react-router-dom"
 
 import Home from "@/pages/Home"
-import Reservation from "@/pages/Reservation"
+import ReservationForm from "@/pages/ReservationForm"
 import About from "@/pages/About"
 import Contact from "@/pages/Contact"
 import Menu from "@/pages/Menu"
@@ -22,7 +22,7 @@ function App() {
       <main className={cn('flex-grow', { 'bg-gray-100 py-20': isNotOnHomePage })}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/reservas" element={<Reservation />} />
+          <Route path="/reservas" element={<ReservationForm />} />
           <Route path="/sobre" element={<About />} />
           <Route path="/contato" element={<Contact />} />
           <Route path="/cardapio" element={<Menu />} />

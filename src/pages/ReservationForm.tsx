@@ -12,7 +12,7 @@ import type { AxiosError } from "axios";
 import api from "@/lib/api";
 import Map from "@/components/helpers/Map";
 
-export default function Reservation() {
+export default function ReservationForm() {
   const dateInputRef = useRef<HTMLInputElement>(null);
   const [feedbackMessage, setFeedbackMessage] = useState<string | null>(null);
   const [table, setTable] = useState<number | null>(null);
