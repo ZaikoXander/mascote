@@ -1,80 +1,80 @@
 import type Category from "./types/Category"
 
 const specialDishesCategory: Category = {
-  name: "Pratos Especiais (para 3 pessoas)",
+  name: "Pratos Especiais (Para 3 Pessoas)",
   items: [
     {
-      "name": "ABADEJO À MODA",
+      "name": "Abadejo À Moda",
       "price": "240,00",
       "description": "Grelhado com legumes na manteiga, arroz à grega e fritas"
     },
     {
-      "name": "ABADEJO À BOA VISTA",
+      "name": "Abadejo À Boa Vista",
       "price": "240,00",
       "description": "Arroz à grega, fritas, couve à dorê e dois palmitos"
     },
     {
-      "name": "ABADEJO À FLORIDA",
+      "name": "Abadejo À Florida",
       "price": "245,00",
       "description": "Grelhado, maionese de legumes, arroz, fritas e palmito"
     },
     {
-      "name": "FILÉ DE PESCADA À BOA VISTA",
+      "name": "Filé De Pescada À Boa Vista",
       "price": "195,00",
       "description": "Arroz à grega, fritas, couve à dorê e dois palmitos"
     },
     {
-      "name": "MOQUECA",
+      "name": "Moqueca",
       "price": "278,00",
       "description": "Abadejo ensopado, leite de coco, azeite de dendê, camarão, arroz e pirão"
     },
     {
-      "name": "CALDERADA ABADEJO",
+      "name": "Calderada Abadejo",
       "price": "330,00",
       "description": "Ensopado com frutos do mar, legumes, arroz e pirão"
     },
     {
-      "name": "POLVO PROVENÇAL",
+      "name": "Polvo Provençal",
       "price": "280,00",
       "description": "Ensopado ao molho sugo com alho dourado, molho inglês e arroz branco"
     },
     {
-      "name": "POLVO À ESPANHOLA",
+      "name": "Polvo À Espanhola",
       "price": "280,00",
       "description": "Ensopado com cebola, pimentão, tomate, ovos, batata e arroz"
     },
     {
-      "name": "GUADALUPE",
+      "name": "Guadalupe",
       "price": "219,80",
       "description": "Filé de pescada recheado com catupiry, mussarela e camarões pequenos, batata sautê e arroz com salsa picada"
     },
     {
-      "name": "ABADEJO À BRASILEIRA",
+      "name": "Abadejo À Brasileira",
       "price": "260,00",
       "description": "Ensopado com molho de camarão, pirão e arroz"
     },
     {
-      "name": "ABADEJO À BELLE MUNIERE",
+      "name": "Abadejo À Belle Muniere",
       "price": "250,00",
       "description": "Grelhado com arroz à grega, batata sauté e molho de alcaparra, camarão e champignon"
     },
     {
-      "name": "ABADEJO AO MOLHO DE CAMARÃO",
+      "name": "Abadejo Ao Molho De Camarão",
       "price": "260,00",
       "description": "A dorê com arroz branco"
     },
     {
-      "name": "FILÉ DE PESCADA À BELLE MUNIERE",
+      "name": "Filé De Pescada À Belle Muniere",
       "price": "209,00",
       "description": "Grelhado com arroz à grega, batata sautê e molho de alcaparra, camarão e champignon"
     },
     {
-      "name": "SALMÃO À BELLE MUNIERE",
+      "name": "Salmão À Belle Muniere",
       "price": "240,00",
       "description": "Grelhado com arroz à grega, batata sautê e molho de alcaparra, camarão e champignon"
     },
     {
-      "name": "FRITO MISTO DE FRUTOS DO MAR",
+      "name": "Frito Misto De Frutos Do Mar",
       "price": "250,00",
       "description": "Casquinha de siri, isca de peixe, polvo alho e óleo, lula à dorê, camarão rosa paulista, molho tártaro"
     },
