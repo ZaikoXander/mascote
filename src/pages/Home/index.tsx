@@ -1,10 +1,10 @@
-import type IFeaturedDish from "@/types/FeaturedDish"
+import type FeaturedDishData from "@/types/FeaturedDish"
 
 import { useNavigate } from "react-router-dom"
 
 import { Button } from "@/components/ui/button"
 
-import FeaturedDish from "@/components/FeaturedDish"
+import FeaturedDish from "./FeaturedDish"
 
 import restaurantInterior from '@/assets/restaurant-interior.jpeg'
 
@@ -15,7 +15,7 @@ import portuguesaPizza from '@/assets/portuguesa-pizza.jpeg'
 import mussarelaPizza from '@/assets/mussarela-pizza.jpeg'
 import calabresaPizza from '@/assets/calabresa-pizza.jpeg'
 
-const featuredDishes: IFeaturedDish[] = [
+const featuredDishes: FeaturedDishData[] = [
   { name: "Abadejo a moda", image: abadejoAModa },
   { name: "Abadejo abellemuniere", image: abadejoAbellemuniere },
   { name: "File mingnon aparmegiana", image: fileMingnonAparmegiana },
