@@ -85,7 +85,7 @@ export default function Main() {
                 <TableHead>Data</TableHead>
                 <TableHead>Horário</TableHead>
                 <TableHead>Convidados</TableHead>
-                {/* <TableHead>Actions</TableHead> */}
+                <TableHead>Ações</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
