@@ -7,7 +7,7 @@ import { useNavigate, useParams } from "react-router-dom";
 
 import useReservationsStore from "./store/useReservationStore";
 
-import { formatDateTime } from "../helper";
+import { formatDate } from "../helper";
 
 import DashboardLink from "../components/DashboardLink";
 
@@ -38,6 +38,11 @@ export default function Reservation() {
     )
   }
 
+  const {
+    date, time, name, email, phone_number, number_of_guests: numberOfGuests,
+    table, observations
+  } = reservation
+
   return (
     <>
       <DashboardLink />
@@ -54,49 +59,49 @@ export default function Reservation() {
                 <Calendar className="h-4 w-4 mr-2" />
                 Data
               </Label>
-              <p>{formatDateTime(reservation.date)}</p>
+              <p>{formatDate(date)}</p>
             </div>
             <div className="space-y-2">
               <Label className="font-semibold flex items-center">
                 <Clock className="h-4 w-4 mr-2" />
                 Horário
               </Label>
-              <p>{reservation.time}</p>
+              <p>{time}</p>
             </div>
             <div className="space-y-2">
               <Label className="font-semibold flex items-center">
                 <User className="h-4 w-4 mr-2" />
                 Nome
               </Label>
-              <p>{reservation.name}</p>
+              <p>{name}</p>
             </div>
             <div className="space-y-2">
               <Label className="font-semibold flex items-center">
                 <Mail className="h-4 w-4 mr-2" />
                 Email
               </Label>
-              <p>{reservation.email}</p>
+              <p>{email}</p>
             </div>
             <div className="space-y-2">
               <Label className="font-semibold flex items-center">
                 <Phone className="h-4 w-4 mr-2" />
                 Número de Telefone
               </Label>
-              <p>{reservation.phone_number}</p>
+              <p>{phone_number}</p>
             </div>
             <div className="space-y-2">
               <Label className="font-semibold flex items-center">
                 <Users className="h-4 w-4 mr-2" />
                 Número de Convidados
               </Label>
-              <p>{reservation.number_of_guests}</p>
+              <p>{numberOfGuests}</p>
             </div>
             <div className="space-y-2">
               <Label className="font-semibold flex items-center">
                 <MapPin className="h-4 w-4 mr-2" />
                 Mesa
               </Label>
-              <p>{reservation.table}</p>
+              <p>{table}</p>
             </div>
           </div>
           <div className="space-y-2">
@@ -104,7 +109,7 @@ export default function Reservation() {
               <Clipboard className="h-4 w-4 mr-2" />
               Observações
             </Label>
-            <p className="whitespace-pre-wrap">{reservation.observations}</p>
+            <p className="whitespace-pre-wrap">{observations}</p>
           </div>
         </CardContent>
       </Card>
