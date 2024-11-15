@@ -23,7 +23,7 @@ export default function Menu() {
                   <CardContent className="p-6">
                     <div className="flex justify-between items-start mb-2">
                       <h3 className="text-lg font-semibold">{item.name}</h3>
-                      <span className="text-orange-500 font-semibold">R$ {item.price}</span>
+                      <span className="text-[#B68735] font-semibold">R$ {item.price}</span>
                     </div>
                     <p className="text-gray-600">{item.description}</p>
                   </CardContent>

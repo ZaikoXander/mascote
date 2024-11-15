@@ -55,11 +55,11 @@ export default function Contact() {
             <h3 className="text-xl font-semibold mb-4">Entre em Contato</h3>
             <ul className="space-y-4">
               <li className="flex items-start">
-                <MapPin className="h-6 w-6 mr-2 text-orange-500 flex-shrink-0" />
+                <MapPin className="h-6 w-6 mr-2 text-[#B68735] flex-shrink-0" />
                 <span>Av. Pres. Kennedy, 18.738 - Balneario Flórida, Praia Grande - SP, 11708-206</span>
               </li>
               <li className="flex items-center">
-                <Phone className="h-6 w-6 mr-2 text-orange-500" />
+                <Phone className="h-6 w-6 mr-2 text-[#B68735]" />
                 <span>(13) 3493-1715</span>
               </li>
               {/* <li className="flex items-center">
@@ -67,7 +67,7 @@ export default function Contact() {
                 <span>info@gourmethaven.com</span>
               </li> */}
               <li className="flex items-start">
-                <Clock className="h-6 w-6 mr-2 text-orange-500 flex-shrink-0" />
+                <Clock className="h-6 w-6 mr-2 text-[#B68735] flex-shrink-0" />
                 <div>
                   <p>Segunda não abre</p>
                   <p>Ter - Dom das 11:30 as 23:30</p>
@@ -80,7 +80,7 @@ export default function Contact() {
             <div className="flex space-x-4">
               <a
                 href="https://www.facebook.com/restaurantemascotepg"
-                className="text-gray-600 hover:text-orange-500"
+                className="text-gray-600 hover:text-[#B68735]"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -88,7 +88,7 @@ export default function Contact() {
               </a>
               <a
                 href="https://www.instagram.com/restaurantemascote"
-                className="text-gray-600 hover:text-orange-500"
+                className="text-gray-600 hover:text-[#B68735]"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -152,7 +152,7 @@ export default function Contact() {
                 rows={4}
               />
             </div>
-            <Button type="submit" className="w-full bg-orange-500 hover:bg-orange-600 text-white">
+            <Button type="submit" className="w-full bg-[#DDBB5B] hover:bg-[#B68735] text-white">
               Enviar Mensagem
             </Button>
           </form>

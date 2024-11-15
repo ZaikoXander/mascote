@@ -106,7 +106,7 @@ function App() {
             <div className="flex space-x-4 mt-4 md:mt-0">
               <a
                 href="https://www.facebook.com/restaurantemascotepg"
-                className="hover:text-orange-500"
+                className="hover:text-[#DDBB5B]"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -114,7 +114,7 @@ function App() {
               </a>
               <a
                 href="https://www.instagram.com/restaurantemascote"
-                className="hover:text-orange-500"
+                className="hover:text-[#DDBB5B]"
                 target="_blank"
                 rel="noopener noreferrer"
               >

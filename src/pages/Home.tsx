@@ -41,7 +41,7 @@ export default function Home() {
               </p>
               <Button
                 onClick={() => navigate('/reservas')}
-                className="bg-orange-500 hover:bg-orange-600 text-white"
+                className="bg-[#DDBB5B] hover:bg-[#B68735] text-white"
               >
                 Faça uma Reserva
               </Button>

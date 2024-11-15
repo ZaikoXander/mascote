@@ -171,7 +171,7 @@ export default function Reservation() {
               onChange={(e) => setObservations(e.target.value)}
             ></textarea>
           </div>
-          <Button type="submit" className="w-full bg-orange-500 hover:bg-orange-600 text-white">
+          <Button type="submit" className="w-full bg-[#DDBB5B] hover:bg-[#B68735] text-white">
             Fazer Reserva
           </Button>
         </form>
