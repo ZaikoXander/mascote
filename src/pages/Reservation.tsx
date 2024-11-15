@@ -10,6 +10,7 @@ import {
 import type { AxiosError } from "axios";
 
 import api from "@/lib/api";
+import Map from "@/components/helpers/Map";
 
 export default function Reservation() {
   const dateInputRef = useRef<HTMLInputElement>(null);
@@ -116,11 +117,14 @@ export default function Reservation() {
                 <SelectValue placeholder="Selecione o número de convidados" />
               </SelectTrigger>
               <SelectContent>
-                {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((num) => (
-                  <SelectItem key={num} value={num.toString()}>
-                    {num}{num === 9 && '+'} {num === 1 ? 'convidado' : 'convidados'}
-                  </SelectItem>
-                ))}
+                <Map
+                  array={[1, 2, 3, 4, 5, 6, 7, 8, 9]}
+                  render={(number) => (
+                    <SelectItem key={number} value={number.toString()}>
+                      {number}{number === 9 && '+'} {number === 1 ? 'convidado' : 'convidados'}
+                    </SelectItem>
+                  )}
+                />
               </SelectContent>
             </Select>
           </div>

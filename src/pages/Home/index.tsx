@@ -13,6 +13,7 @@ import mussarelaPizza from './assets/featuredDishes/mussarela-pizza.jpeg'
 import calabresaPizza from './assets/featuredDishes/calabresa-pizza.jpeg'
 
 import type FeaturedDishData from "@/types/FeaturedDish"
+import Map from "@/components/helpers/Map"
 
 const featuredDishes: FeaturedDishData[] = [
   { name: "Abadejo a moda", image: abadejoAModa },
@@ -57,9 +58,12 @@ export default function Home() {
             Mais pedidos
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {featuredDishes.map(({ name, image }, index) => (
-              <FeaturedDish key={index} name={name} image={image} />
-            ))}
+            <Map
+              array={featuredDishes}
+              render={({ name, image }, index) => (
+                <FeaturedDish key={index} name={name} image={image} />
+              )}
+            />
           </div>
         </div>
       </section>

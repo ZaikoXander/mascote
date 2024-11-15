@@ -10,6 +10,8 @@ import {
 } from "@/components/ui/table"
 import { Button } from "@/components/ui/button"
 
+import Map from "@/components/helpers/Map"
+
 import api from "@/lib/api"
 
 import { Link } from "react-router-dom"
@@ -89,22 +91,22 @@ export default function Main() {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {reservations.map((reservation) => (
-                <TableRow key={reservation.id}>
-                  <TableCell>{reservation.name}</TableCell>
-                  <TableCell>{formatDate(reservation.date)}</TableCell>
-                  <TableCell>{reservation.time}</TableCell>
-                  <TableCell>{reservation.number_of_guests}</TableCell>
-                  <TableCell>
-                    <Link to={`/admin/reservations/${reservation.id}`}>
-                      <Button variant="outline" size="sm">Ver</Button>
-                    </Link>
-                  </TableCell>
-                  {/* <TableCell>
-                    <Button variant="outline" size="sm">Edit</Button>
-                  </TableCell> */}
-                </TableRow>
-              ))}
+              <Map
+                array={reservations}
+                render={({ id, name, date, time, number_of_guests }) => (
+                  <TableRow key={id}>
+                    <TableCell>{name}</TableCell>
+                    <TableCell>{formatDate(date)}</TableCell>
+                    <TableCell>{time}</TableCell>
+                    <TableCell>{number_of_guests}</TableCell>
+                    <TableCell>
+                      <Link to={`/admin/reservations/${id}`}>
+                        <Button variant="outline" size="sm">Ver</Button>
+                      </Link>
+                    </TableCell>
+                  </TableRow>
+                )}
+              />
             </TableBody>
           </Table>
         </div>
@@ -124,19 +126,22 @@ export default function Main() {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {messages.map((message) => (
-                <TableRow key={message.id}>
-                  <TableCell>{message.name}</TableCell>
-                  <TableCell>{message.email}</TableCell>
-                  <TableCell>{message.subject}</TableCell>
-                  <TableCell>{formatDateTime(message.created_at)}</TableCell>
-                  <TableCell>
-                    <Link to={`/admin/messages/${message.id}`}>
-                      <Button variant="outline" size="sm">Ver</Button>
-                    </Link>
-                  </TableCell>
-                </TableRow>
-              ))}
+              <Map
+                array={messages}
+                render={({ id, name, email, subject, created_at }) => (
+                  <TableRow key={id}>
+                    <TableCell>{name}</TableCell>
+                    <TableCell>{email}</TableCell>
+                    <TableCell>{subject}</TableCell>
+                    <TableCell>{formatDateTime(created_at)}</TableCell>
+                    <TableCell>
+                      <Link to={`/admin/messages/${id}`}>
+                        <Button variant="outline" size="sm">Ver</Button>
+                      </Link>
+                    </TableCell>
+                  </TableRow>
+                )}
+              />
             </TableBody>
           </Table>
         </div>
