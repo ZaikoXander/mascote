@@ -6,7 +6,7 @@ import { Menu as MenuIcon } from "lucide-react"
 
 import { Link } from "react-router-dom"
 
-import MobileMenu from "@/components/MobileMenu"
+import MobileMenu from "./MobileMenu"
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
