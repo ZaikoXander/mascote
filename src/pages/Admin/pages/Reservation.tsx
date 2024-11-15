@@ -1,22 +1,15 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 
-import { ArrowLeft, Calendar, Clipboard, Clock, Mail, MapPin, Phone, User, Users } from "lucide-react";
+import { Calendar, Clipboard, Clock, Mail, MapPin, Phone, User, Users } from "lucide-react";
 
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import useReservationsStore from "./store/useReservationStore";
 
 import { formatDateTime } from "../helper";
 
-function DashboardLink() {
-  return (
-    <Link to="/admin" className="flex items-center text-gray-600 hover:text-gray-800 mb-6">
-      <ArrowLeft className="h-4 w-4 mr-2" />
-      Voltar para o Dashboard
-    </Link>
-  )
-}
+import DashboardLink from "../components/DashboardLink";
 
 export default function Reservation() {
   const navigate = useNavigate();
