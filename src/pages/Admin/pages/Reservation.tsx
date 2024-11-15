@@ -1,11 +1,12 @@
+import { useNavigate, useParams } from "react-router-dom";
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 
 import { Calendar, Clipboard, Clock, Mail, MapPin, Phone, User, Users } from "lucide-react";
 
-import { useNavigate, useParams } from "react-router-dom";
 
-import useReservationsStore from "./store/useReservationStore";
+import useReservationsStore from "../store/useReservationStore";
 
 import { formatDate } from "../helper";
 

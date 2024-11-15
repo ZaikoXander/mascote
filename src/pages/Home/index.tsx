@@ -2,8 +2,8 @@ import { useNavigate } from "react-router-dom"
 
 import { Button } from "@/components/ui/button"
 
-import RestaurantImagesCarousel from "./RestaurantImagesCarousel"
-import FeaturedDish from "./FeaturedDish"
+import RestaurantImagesCarousel from "./components/RestaurantImagesCarousel"
+import FeaturedDish from "./components/FeaturedDish"
 
 import abadejoAModa from './assets/featuredDishes/abadejo-a-moda.jpeg'
 import abadejoAbellemuniere from './assets/featuredDishes/abadejo-abellemuniere.jpeg'
@@ -13,6 +13,7 @@ import mussarelaPizza from './assets/featuredDishes/mussarela-pizza.jpeg'
 import calabresaPizza from './assets/featuredDishes/calabresa-pizza.jpeg'
 
 import type FeaturedDishData from "@/types/FeaturedDish"
+
 import Map from "@/components/helpers/Map"
 
 const featuredDishes: FeaturedDishData[] = [

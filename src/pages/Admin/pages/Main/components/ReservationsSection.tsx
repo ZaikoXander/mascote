@@ -1,4 +1,6 @@
-import useReservationsStore from "../store/useReservationStore"
+import { Link } from "react-router-dom"
+
+import useReservationsStore from "@/pages/Admin/store/useReservationStore"
 
 import {
   Table,
@@ -12,9 +14,7 @@ import { Button } from "@/components/ui/button"
 
 import Map from "@/components/helpers/Map"
 
-import { Link } from "react-router-dom"
-
-import { formatDate } from "../../helper"
+import { formatDate } from "../../../helper"
 
 export default function ReservationsSection() {
   const { reservations } = useReservationsStore()

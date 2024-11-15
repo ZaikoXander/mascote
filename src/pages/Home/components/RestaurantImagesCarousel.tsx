@@ -3,13 +3,13 @@ import {
 } from "@/components/ui/carousel"
 import { Card, CardContent } from "@/components/ui/card"
 
-import image1 from './assets/restaurantImages/1.jpeg'
-import image2 from './assets/restaurantImages/2.jpeg'
-import image3 from './assets/restaurantImages/3.jpeg'
-import image4 from './assets/restaurantImages/4.jpeg'
-import image5 from './assets/restaurantImages/5.jpeg'
-import image6 from './assets/restaurantImages/6.jpeg'
-import image7 from './assets/restaurantImages/7.jpeg'
+import image1 from '../assets/restaurantImages/1.jpeg'
+import image2 from '../assets/restaurantImages/2.jpeg'
+import image3 from '../assets/restaurantImages/3.jpeg'
+import image4 from '../assets/restaurantImages/4.jpeg'
+import image5 from '../assets/restaurantImages/5.jpeg'
+import image6 from '../assets/restaurantImages/6.jpeg'
+import image7 from '../assets/restaurantImages/7.jpeg'
 
 import Map from "@/components/helpers/Map"
 

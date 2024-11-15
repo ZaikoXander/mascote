@@ -1,9 +1,9 @@
+import { useNavigate, useParams } from "react-router-dom";
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 
-import { useNavigate, useParams } from "react-router-dom";
-
-import useMessagesStore from "@/pages/Admin/pages/store/useMessagesStore";
+import useMessagesStore from "../store/useMessagesStore";
 
 import { formatDateTime } from "../helper";
 

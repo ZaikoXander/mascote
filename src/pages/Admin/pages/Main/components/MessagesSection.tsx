@@ -1,4 +1,6 @@
-import useMessagesStore from "../store/useMessagesStore"
+import { Link } from "react-router-dom"
+
+import useMessagesStore from "@/pages/Admin/store/useMessagesStore"
 
 import {
   Table,
@@ -12,9 +14,7 @@ import { Button } from "@/components/ui/button"
 
 import Map from "@/components/helpers/Map"
 
-import { Link } from "react-router-dom"
-
-import { formatDateTime } from "../../helper"
+import { formatDateTime } from "../../../helper"
 
 export default function MessagesSection() {
   const { messages } = useMessagesStore()

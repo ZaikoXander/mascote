@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-import type Reservation from "../types/Reservation";
+import Reservation from "../types/Reservation";
 
 interface ReservationState {
   reservations: Reservation[];

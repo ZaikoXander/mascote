@@ -1,6 +1,6 @@
-import type IFeaturedDish from "@/types/FeaturedDish"
+import type FeaturedDishData from "@/types/FeaturedDish"
 
-export default function FeaturedDish({ name, image }: IFeaturedDish) {
+export default function FeaturedDish({ name, image }: FeaturedDishData) {
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden">
       <img src={image} alt={name} className="w-full h-48 object-cover" />

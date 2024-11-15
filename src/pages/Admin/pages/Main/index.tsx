@@ -1,15 +1,15 @@
 import { useEffect } from "react"
 
-import ReservationsSection from "./ReservationsSection"
-import MessagesSection from "./MessagesSection"
+import ReservationsSection from "./components/ReservationsSection"
+import MessagesSection from "./components/MessagesSection"
 
 import api from "@/lib/api"
 
-import useReservationsStore from "../store/useReservationStore"
-import useMessagesStore from "../store/useMessagesStore"
+import useReservationsStore from "../../store/useReservationStore"
+import useMessagesStore from "../../store/useMessagesStore"
 
-import type Message from "../types/Message"
-import type Reservation from "../types/Reservation"
+import type Message from "../../types/Message"
+import type Reservation from "../../types/Reservation"
 
 export default function Main() {
   const { setReservations } = useReservationsStore()
