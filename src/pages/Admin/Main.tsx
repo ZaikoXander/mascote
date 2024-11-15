@@ -95,6 +95,11 @@ export default function Main() {
                   <TableCell>{formatDate(reservation.date)}</TableCell>
                   <TableCell>{reservation.time}</TableCell>
                   <TableCell>{reservation.number_of_guests}</TableCell>
+                  <TableCell>
+                    <Link to={`/admin/reservations/${reservation.id}`}>
+                      <Button variant="outline" size="sm">Ver</Button>
+                    </Link>
+                  </TableCell>
                   {/* <TableCell>
                     <Button variant="outline" size="sm">Edit</Button>
                   </TableCell> */}

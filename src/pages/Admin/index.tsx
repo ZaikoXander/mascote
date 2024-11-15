@@ -6,6 +6,7 @@ import { Link, Route, Routes } from "react-router-dom"
 
 import Main from "./Main"
 import Message from "./Message"
+import Reservation from "./Reservation"
 
 import api from "@/lib/api"
 
@@ -86,6 +87,7 @@ export default function Admin() {
           <Routes>
             <Route path="*" element={<Main />} />
             <Route path="/messages/:id" element={<Message />} />
+            <Route path="/reservations/:id" element={<Reservation />} />
           </Routes>
         </div>
       </main>
