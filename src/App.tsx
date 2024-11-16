@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
 
-function App() {
+export default function App() {
   const location = useLocation()
   const isNotOnHomePage = location.pathname !== '/'
 
@@ -34,5 +34,3 @@ function App() {
     </div>
   )
 }
-
-export default App
