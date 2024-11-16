@@ -14,7 +14,7 @@ import calabresaPizza from './assets/featuredDishes/calabresa-pizza.jpeg'
 
 import type FeaturedDishData from "@/types/FeaturedDish"
 
-import Map from "@/components/helpers/Map"
+import Map from "@zaikoxander/react-map-render"
 
 const featuredDishes: FeaturedDishData[] = [
   { name: "Abadejo a moda", image: abadejoAModa },

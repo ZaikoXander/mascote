@@ -2,7 +2,8 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 import menuCategories from "./menuCategories"
-import Map from "@/components/helpers/Map"
+
+import Map from "@zaikoxander/react-map-render"
 
 export default function Menu() {
   return (

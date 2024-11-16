@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/table"
 import { Button } from "@/components/ui/button"
 
-import Map from "@/components/helpers/Map"
+import Map from "@zaikoxander/react-map-render"
 
 import { formatDate } from "../../../helper"
 

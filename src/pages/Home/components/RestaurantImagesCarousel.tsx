@@ -11,7 +11,7 @@ import image5 from '../assets/restaurantImages/5.jpeg'
 import image6 from '../assets/restaurantImages/6.jpeg'
 import image7 from '../assets/restaurantImages/7.jpeg'
 
-import Map from "@/components/helpers/Map"
+import Map from "@zaikoxander/react-map-render"
 
 import Autoplay from 'embla-carousel-autoplay'
 

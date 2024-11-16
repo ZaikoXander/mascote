@@ -10,7 +10,7 @@ import {
 import type { AxiosError } from "axios";
 
 import api from "@/lib/api";
-import Map from "@/components/helpers/Map";
+import Map from "@zaikoxander/react-map-render";
 
 export default function ReservationForm() {
   const dateInputRef = useRef<HTMLInputElement>(null);
