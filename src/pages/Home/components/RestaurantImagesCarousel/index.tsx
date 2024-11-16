@@ -16,17 +16,17 @@ import Autoplay from 'embla-carousel-autoplay'
 
 import CarouselImageItem from "./CarouselImageItem"
 
-export default function RestaurantImagesCarousel() {
-  const restaurantImages = [
-    image1,
-    image2,
-    image3,
-    image4,
-    image5,
-    image6,
-    image7,
-  ]
+const restaurantImages = [
+  image1,
+  image2,
+  image3,
+  image4,
+  image5,
+  image6,
+  image7,
+]
 
+export default function RestaurantImagesCarousel() {
   return (
     <Carousel className="w-full" opts={{ loop: true }} plugins={[Autoplay()]}>
       <CarouselContent>
