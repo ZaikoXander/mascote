@@ -59,8 +59,8 @@ export default function RestaurantImagesCarousel() {
           )}
         />
       </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
+      <CarouselPrevious className="hidden lg:inline-flex" />
+      <CarouselNext className="hidden lg:inline-flex" />
     </Carousel>
   )
 }
